@@ -536,12 +536,6 @@ class Bank extends Person{
      }
 
      static transferMoney(accNo, money){
-          currentUser.balance -= money;
-
-          onLoadUser(currentUser);
-          localStorage.setItem("currentUser", JSON.stringify(currentUser));
-          saveHistory(currentUser.accountNumber, money, new Date().toLocaleString(), "transfer");
-          
           let accounts = JSON.parse(localStorage.getItem("bank_accounts")) || [];
 
           if(accounts.length === 0){
@@ -555,7 +549,11 @@ class Bank extends Person{
           }
 
           user[0].balance += +money;
+          currentUser.balance -= money;
 
+          onLoadUser(currentUser);
+          localStorage.setItem("currentUser", JSON.stringify(currentUser));
+          saveHistory(currentUser.accountNumber, money, new Date().toLocaleString(), "transfer");
      
           localStorage.setItem("bank_accounts", JSON.stringify(accounts));
           updateUserAccount(currentUser.accountNumber, currentUser.balance);
