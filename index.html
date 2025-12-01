@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="./style.css">
+     <script src="https://kit.fontawesome.com/392ee53866.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div id="flex-wrapper">
+          <!-- Navbar -->
+          <nav id="navbar">
+               <div>
+                    <h1>Rob Bank</h1>
+               </div>
+               <div>
+                    <div id="menu">
+                         <ul>
+                              <li>
+                                   <button id="check-balance" class="nav-btns">
+                                        <i class="fas fa-wallet"></i>
+                                        Check Balance
+                                   </button>
+                              </li>
+                              <li>
+                                   <button id="check-deposit" class="nav-btns">
+                                        <i class="fas fa-plus-circle"></i>
+                                        Deposit
+                                   </button>
+                              </li>
+                              <li>
+                                   <button id="check-withdraw" class="nav-btns">
+                                        <i class="fas fa-minus-circle"></i>
+                                        Withdraw
+                                   </button>
+                              </li>
+                              <li>
+                                   <button id="check-transfer" class="nav-btns">
+                                        <i class="fa-solid fa-money-bill-transfer"></i>
+                                        Transfer Money
+                                   </button>
+                              </li>
+                              <li>
+                                   <button id="check-transaction" class="nav-btns">
+                                        <i class="fas fa-history"></i>
+                                        Transaction History
+                                   </button>
+                              </li>
+                              <li>
+                                   <button id="logout-btn" class="nav-btns">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        Logout
+                                   </button>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+          </nav>
+
+
+          <!-- Quick Actions -->
+          <div id="template">
+               <div id="welcome-msg">
+                    <h1>Welcome to Rob Bank</h1>
+               </div>
+               <div id="account-details">
+                    <div id="account-header">
+                         <p id="account-name"></p>
+                         <p id="account-number"></p>
+                    </div>
+                    <div id="account-balance">
+                         <p></p>
+                    </div>
+                    <div id="account-footer">
+                         <div id="active-cover">
+                              <div id="active-circle"></div>
+                              <p>Active</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+          <!-- Login Page -->
+          <div id="auth-page">
+               <div id="login">
+                    <h1>Login Menu</h1>
+                    <input type="number" id="login-name" required placeholder="Enter the Account Number" />
+                    <input type="password" id="login-pass" required placeholder="Enter the Password" />
+                    <p id="login-error-message"></p>
+                    <button class="design-btn" id="login-btn">Login</button>
+                    <p id="switch-signup">Don't have an account? SignUp</p>
+               </div>
+               <div id="signup">
+                    <h1>SignUp Menu</h1>
+                    <input type="text" id="signup-name" required placeholder="Enter the Name" />
+                    <input type="password" id="signup-pass" required placeholder="Enter the Password" />
+                    <p id="signup-error-message"></p>
+                    <button class="design-btn" id="signup-btn">SignUp</button>
+                    <p id="switch-login">Already have an account? Login</p>
+               </div>
+          </div>
+
+
+          <!-- Check Balance -->
+          <div id="balance-page">
+               <h1>Balance</h1>
+               <button id="balance-close" class="close-btn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+               </button>
+               <div id="balanceOutput"></div>
+          </div>
+
+
+          <!-- Deposit Page -->
+          <div id="deposit-page">
+               <h1>Make Deposit</h1>
+               <button id="deposit-close" class="close-btn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+               </button>
+               <input type="number" name="" id="deposit-amount" placeholder="Deposit Amount" />
+               <p id="deposit-message"></p>
+               <button id="deposit-btn">Deposit Amount</button>
+          </div>
+
+
+          <!-- Withdraw Page -->
+          <div id="withdraw-page">
+               <h1>Make Withdraw</h1>
+               <button id="withdraw-close" class="close-btn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+               </button>
+               <input type="number" name="" id="withdraw-amount" placeholder="Withdraw Amount" />
+               <p id="withdraw-message"></p>
+               <button id="withdraw-btn">Withdraw Amount</button>
+          </div>
+
+
+          <!-- Transaction History -->
+          <div id="transaction-page">
+               <h1>Transaction History</h1>
+               <button id="transaction-close" class="close-btn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+               </button>
+               <div id="transactionOutput"></div>
+          </div>
+
+          <!-- Transaction History -->
+          <div id="transfer-page">
+               <h1>Transfer Page</h1>
+               <button id="transfer-close" class="close-btn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+               </button>
+               <input type="number" name="" id="transfer-account" placeholder="Account Number to Transfer">
+               <input type="number" name="" id="transfer-amount" placeholder="Transfer Amount" />
+               <p id="transfer-message"></p>
+               <button id="transfer-btn">Withdraw Amount</button>
+          </div>
+     </div>
+     
+     <script src="./script.js"></script>
+</body>
+</html>

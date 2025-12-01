@@ -1,0 +1,447 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     height: 100vh;
+}
+#flex-wrapper{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     width: 100%;
+}
+input{
+     height: 40px;
+     width: 300px;
+     border-radius: 5px;
+     border: 1px solid black;
+     padding: 10px 20px;
+     font-size: 15px;
+}
+.design-btn {
+     padding: 10px 60px;
+     border: none;
+     border-radius: 5px;
+     font-size: 15px;
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     cursor: pointer;
+     transition: all 0.3s ease-in-out;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+}
+.design-btn:hover {
+     transform: scale(1.1);
+}
+.input-error{
+     border: 3px solid red;
+}
+
+/* Navbar */
+nav{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     width: 95%;
+     padding: 10px 30px;
+     background: transparent;
+     backdrop-filter: blur(30px);
+     border: 1px solid white;
+     border-radius: 12px;
+     position: absolute;
+     top: 20px;
+}
+nav div ul{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+}
+li {
+     list-style: none;
+}
+.nav-btns{
+     background-color: white;
+     padding: 10px 20px;
+     border-radius: 10px;
+     transition: all 0.4s ease-in-out;
+     cursor: pointer;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     border: none;
+     font-size: 14px;
+}
+.nav-btns:hover{
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     transform: scale(1.1);
+}
+#credentials{
+     display: none;
+}
+
+
+/* Template */
+#template {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 20px;
+     width: 40%;
+}
+#welcome-msg, #account-details{
+     background-color: white;
+     padding: 20px 60px;
+     border-radius: 10px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     width: 100%;
+     text-align: center;
+}
+#account-header{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     color: #7d7d7d;
+}
+#account-balance p{
+     text-align: center;
+     margin-top: 30px;
+     font-size: 35px;
+     color: #4CAF50;
+     font-weight: 900;
+     text-shadow: 0 1px 3px rgba(0, 255, 0, 0.2);
+}
+#account-footer{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     margin: 15px 0;
+}
+#active-circle{
+     padding: 7px;
+     background-color: #09d00f;
+     border-radius: 50%;
+     box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.2);
+}
+#account-footer #active-cover{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     background-color: #f2f2f2;
+     padding: 10px 40px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+     animation: blink-in infinite 1s alternate;
+     transition: all 0.3s ease-in-out;
+}
+@keyframes blink-in {
+     from{
+          opacity: 0.2;
+     } to{
+          opacity: 1;
+     }
+}
+/* Quick Actions */
+#quick-actions{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 20px;
+     background-color: white;
+     padding: 20px 60px;
+     border-radius: 10px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     width: 100%;
+     text-align: center;
+}
+#quick-actions>div{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-around;
+     gap: 10px;
+     width: 100%;
+}
+.qa-btns{
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     padding: 15px 30px;
+     border-radius: 10px;
+     transition: all 0.4s ease-in-out;
+     cursor: pointer;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     border: none;
+     font-size: 15px;
+}
+
+
+
+/* Auth Page */
+#auth-page {
+     display: none;
+     background-color: white;
+     padding: 50px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+     position: relative;
+}
+#login {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 30px;
+     padding: 50px 10px;
+}
+#signup {
+     display: none;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 30px;
+     padding: 50px 10px;
+}
+#login p, #signup p{
+     font-size: 15px;
+     color: blue;
+     text-decoration: underline;
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+}
+#login p:hover, #signup p:hover{
+     text-decoration: none;
+}
+.close-btn{
+     background: transparent;
+     border: none;
+     font-size: 30px;
+     position: absolute;
+     top: 5px;
+     right: 10px;
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+}
+#auth-close:hover{
+     transform: scale(1.1);
+}
+#login-error-message , #signin-error-message{
+     display: none;
+     font-weight: 900;
+     font-size: 14px;
+     margin: 10px 0;
+}
+
+/* Check Balance */
+#balance-page{
+     display: none;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 15px;
+     background-color: white;
+     padding: 70px 50px;
+     border-radius: 15px;
+     box-shadow: rgba(0, 0, 0, 0.01);
+     position: relative;
+}
+#balanceOutput{
+     padding: 25px;
+     margin: 20px auto;
+     text-align: center;
+     background: linear-gradient(135deg, #f7f9fd, #e3eafb);
+     border-radius: 15px;
+     transform: translateY(15px);
+     transition: all 0.5s ease-in-out;
+     font-size: 24px;
+     font-weight: 700;
+     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Deposit Page */
+#deposit-page {
+     display: none;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 15px;
+     background-color: white;
+     padding: 70px 50px;
+     border-radius: 15px;
+     box-shadow: rgba(0, 0, 0, 0.01);
+     position: relative;
+}
+#deposit-btn {
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     padding: 15px;
+     border-radius: 10px;
+     transition: all 0.4s ease-in-out;
+     cursor: pointer;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     border: none;
+     font-size: 16px;
+     margin-top: 30px;
+}
+
+
+/* Withdraw Page */
+#withdraw-page {
+     display: none;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 15px;
+     background-color: white;
+     padding: 70px 50px;
+     border-radius: 15px;
+     box-shadow: rgba(0, 0, 0, 0.01);
+     position: relative;
+}
+#withdraw-btn {
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     padding: 15px;
+     border-radius: 10px;
+     transition: all 0.4s ease-in-out;
+     cursor: pointer;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     border: none;
+     font-size: 16px;
+     margin-top: 30px;
+}
+
+/* Transfer Money */
+#transfer-page{
+     display: none;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 15px;
+     background-color: white;
+     padding: 70px 50px;
+     border-radius: 15px;
+     box-shadow: rgba(0, 0, 0, 0.01);
+     position: relative;
+}
+#transfer-btn{
+     background: linear-gradient(135deg, #d2f0fe, #ece0fe);
+     padding: 15px;
+     border-radius: 10px;
+     transition: all 0.4s ease-in-out;
+     cursor: pointer;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.01);
+     border: none;
+     font-size: 16px;
+     margin-top: 30px;
+}
+
+
+/* Transaction Page */
+#transaction-page {
+     display: none;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 15px;
+     background-color: white;
+     padding: 20px 50px;
+     border-radius: 15px;
+     box-shadow: rgba(0, 0, 0, 0.01);
+     position: relative;
+     width: 50%;
+}
+#transactionOutput{
+     width: 100%;
+     height: 400px;
+     overflow-y: auto;
+     overflow-x: hidden;
+}
+.no-transactions {
+    color: #828181;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    border: 1px dashed #cccaca;
+}
+.transaction-item{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     align-items: center;
+     background: #f9f9f9;
+     padding: 15px;
+     border-radius: 8px;
+     width: 100%;
+     box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.05);
+     transition: all 0.2s ease-in-out;
+}
+.transaction-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+.transaction-item .type{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.deposit .icon {
+     background-color: #ccfecd;
+     padding: 10px 15px;
+     font-size: 30px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+.amount {
+    font-size: 1.2rem;
+    color: #4CAF50;
+    font-weight: 600;
+}
+.date {
+    font-size: 0.9rem;
+    color: #7d7d7d;
+}
+.withdraw .icon {
+     background-color: #ffc2bd;
+     padding: 10px 15px;
+     font-size: 30px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+.transfer .icon {
+     background-color: #fdffc1;
+     padding: 10px 15px;
+     font-size: 30px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+.withdraw .amount , .transfer .amount{
+    color: #F44336;
+} 
