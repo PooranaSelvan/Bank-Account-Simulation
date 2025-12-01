@@ -177,6 +177,8 @@ logoutBtn.addEventListener("click", () => {
      loginPass.value = "";
      signUpName.value = "";
      signUpPass.value = "";
+     signUpErrorMessage.innerText = "";
+     loginErrorMessage.innerText = "";
 });
 
 
@@ -223,12 +225,27 @@ depositCloseBtn.addEventListener("click", () => {
      depositMessage.style.display = "none";
      template.style.display = "flex";
      depositInput.value = "";
+     depositMessage.innerText = "";
 });
 depositBtn.addEventListener("click", () => {
      if(!depositInput.value){
           depositMessage.style.display = "flex";
           depositMessage.style.color = "red";
           depositMessage.innerText = "Invalid Deposit Amount!";
+          return;
+     }
+
+     if(depositInput.value > 100000){
+          depositMessage.style.display = "flex";
+          depositMessage.style.color = "red";
+          depositMessage.innerText = "You can't transfer more than 1Lakhs at a time!";
+          return;
+     }
+
+     if(currentUser.balance > 1000000){
+          depositMessage.style.display = "flex";
+          depositMessage.style.color = "red";
+          depositMessage.innerText = "Contact Bank to Store More than 10 Lakhs!";
           return;
      }
 
@@ -262,12 +279,20 @@ withdrawCloseBtn.addEventListener("click", () => {
      withdrawContainer.style.display = "none";
      template.style.display = "flex";
      withdrawInput.value = "";
+     withdrawMessage.innerText = "";
 });
 withdrawBtn.addEventListener("click", () => {
      if(!withdrawInput.value){
           withdrawMessage.style.display = "flex";
           withdrawMessage.style.color = "red";
           withdrawMessage.innerText = "Invalid Deposit Amount!";
+          return;
+     }
+
+     if(withdrawInput.value < 500){
+          withdrawMessage.style.display = "flex";
+          withdrawMessage.style.color = "red";
+          withdrawMessage.innerText = "Minimum Amount to Withdraw is ₹500!";
           return;
      }
 
@@ -369,6 +394,13 @@ transferBtn.addEventListener("click", () => {
           return;
      }
 
+     if(currentUser.accountNumber === transferAccount.value){
+          transferAccount.classList.add("input-error");
+          transferMessage.style.color = "red";
+          transferMessage.innerText = "You can't Transfer to Yourself!";
+          return;
+     }
+
      let res = Bank.transferMoney(transferAccount.value, transferMoney.value);
 
      if(res){
@@ -387,6 +419,7 @@ transferCloseBtn.addEventListener("click", () => {
      template.style.display = "flex";
      transferAccount.value = "";
      transferMoney.value = "";
+     transferMessage.innerText = "";
 });
 
 
