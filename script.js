@@ -302,8 +302,10 @@ withdrawBtn.addEventListener("click", () => {
           withdrawMessage.style.color = "green";
           withdrawMessage.innerText = "Withdrawn Successfully!";
      } else {
-          withdrawMessage.style.color = "red";
-          withdrawMessage.innerText = "Invalid Withdrawn Amount!";
+          if(withdrawMessage.innerText.length < 0){
+               withdrawMessage.style.color = "red";
+               withdrawMessage.innerText = "Invalid Withdrawn Amount!"; 
+          }
      }
 
      withdrawInput.value = "";
@@ -524,6 +526,8 @@ class Bank extends Person{
           if(amount <= 0){
                return false;
           } else if(amount > currentUser.balance){
+               withdrawMessage.style.color = "red";
+               withdrawMessage.innerText = "Insufficient Balance!";
                return false;
           } else {
                currentUser.balance -= amount;
